@@ -4,29 +4,36 @@
 body {
     justify-content: center;
     background-color: black;
+    font-family: 'Press Start 2P', cursive;
+   
+    
 }
 
 
 .container {
+  
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
 }
 
 .game-name {
-    width: 100vw;
-    margin: auto;
-    padding-top: 25px;
-    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center;   
+    padding-top: 25px;   
+    flex-wrap: wrap; 
     display: flex;
-    font-weight: 900;
-    font-size: 3rem;
-    text-align: center; 
-    flex-direction: column;
-    color: rgb(49, 235, 25);
+    font-weight: 900;    
+    font-size: 4rem;     
+    text-align: center;    
+    color: rgb(49, 235, 25);  
     font-family: 'Press Start 2P', cursive;
     text-shadow: 2px 5px 10px rgb(47, 62, 234);
-
-}
-
+ }
+    
 
 .content {
     margin: 20px;
@@ -43,6 +50,9 @@ body {
 
 
 }
+
+
+
 
 /* Keyframe animation for title of game*/
 
@@ -61,3 +71,49 @@ body {
 .game-name {
     animation: floating 2s ease-in-out infinite;
 }
+
+
+/*information starts here*/
+
+.information {
+    margin: 15px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 2.5;
+    padding-bottom: 20px;
+    
+}
+
+.button {
+    
+    margin: 15px;
+    background-color: blue;
+    color: rgb(25, 250, 4);
+    font-size: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 10px;
+    cursor: grab;
+    
+}
+
+/* animation for play button */
+
+@keyframes buttonAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .button {
+    animation: buttonAnimation 1s ease-in-out infinite;
+  }
