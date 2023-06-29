@@ -5,31 +5,35 @@ body {
     justify-content: center;
     background-color: black;
     font-family: 'Press Start 2P', cursive;
+    
    
     
 }
 
 
 .container {
-  
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 31%, rgb(81, 33, 127) 100%);
+    height: 100vh;
 }
 
 .game-name {
-    
+    width: 90vw;
+    margin: 15px;
     justify-content: center;
     align-items: center;   
     padding-top: 25px;   
     flex-wrap: wrap; 
     display: flex;
     font-weight: 900;    
-    font-size: 4rem;     
+    font-size: 2rem;     
     text-align: center;    
-    color: rgb(49, 235, 25);  
+    color: rgb(216, 230, 215);  
     font-family: 'Press Start 2P', cursive;
     text-shadow: 2px 5px 10px rgb(47, 62, 234);
  }
@@ -84,13 +88,18 @@ body {
     
 }
 
+a {
+    color: rgb(135, 16, 255);
+    text-decoration: none;
+}
+
 .button {
     
     margin: 15px;
-    background-color: blue;
+    background-color: rgb(235, 235, 235);
     color: rgb(25, 250, 4);
     font-size: 20px;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,3 +126,36 @@ body {
   .button {
     animation: buttonAnimation 1s ease-in-out infinite;
   }
+
+
+
+
+
+  /* this is the css for game-page */
+
+  .title-of-game{
+    color: aliceblue;
+    text-align: center;
+    padding: 25PX;
+  }
+
+  
+
+  .game-container {
+    display: block; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(content/back-ground.png);
+    width: 90vw;
+    height: 80vh;
+    margin: 35px;
+    padding-right: 15px; 
+    border: 2px solid rgb(0, 255, 26);
+    box-shadow: 3px 5px 50px chartreuse;
+  } 
+
+
+
+  

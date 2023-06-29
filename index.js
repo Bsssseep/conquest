@@ -1,8 +1,4 @@
-//function for play button to transition into game-page//
+//Playable Character call//
 
-const playButton = document.getElementById (`playButton`);
 
-playButton.addEventListener(`click`, () => 
-{
-    
-})
+//LIVES WILL GO HERE. //
