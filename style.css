@@ -141,7 +141,7 @@ a {
 
   
 
-  .game-container {
+  /*.game-container {
     display: block; 
     flex-wrap: wrap;
     justify-content: center;
@@ -156,6 +156,6 @@ a {
     box-shadow: 3px 5px 50px chartreuse;
   } 
 
-
+*/
 
   
