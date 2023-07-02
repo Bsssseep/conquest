@@ -18,7 +18,7 @@
     </div>
    
     
-       
+    <script src="laser.js"></script>  
     <script src="playermoves.js"></script>    
     <script src="EnemyCharacters.js"></script>
     <script src="newPlayableCharacter.js"></script>
@@ -46,16 +46,24 @@
             move (element, x, direction);
                
             }
-           
-            
-        });  
+            if (e.key === ' ') {
+                direction = 'north'
+                console.log(element)
+    ;
+  }
+});
         
-        document.addEventListener('keyup', function(e){
-            direction = null;
-         
-            
-        });
+       //laser//
         
+      
+
+            
+       
+        
+      
+
+     
+
    </script>
 </body>
 </html>

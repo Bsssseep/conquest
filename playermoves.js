@@ -2,7 +2,7 @@ function move(element, x, direction) {
     console.log (x)
     console.log(direction)
    // element.style.position = 'fixed';
-   element.style.left = '400px';
+  // element.style.left = '400px';
         
         if(direction === 'left'){
             if(x > 100)
@@ -10,7 +10,8 @@ function move(element, x, direction) {
             x = x - 20
         }
         } else if(direction === 'right'){
-           x = x + 20
+            if(x < 1000){
+           x = x + 20}
         } 
         element.style.left = x + 'px';
   
@@ -24,8 +25,7 @@ function move(element, x, direction) {
 
    //this is where I can shoot lasers//
    
-   let element = new Image ();
-   element.src = new URL("")
+   
 
 
 
