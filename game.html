@@ -23,6 +23,42 @@
     <script src="EnemyCharacters.js"></script>
     <script src="newPlayableCharacter.js"></script>
     <script src="index.js"></script>
+
+
+   <script> 
+    // newPlayableCharacter();
+     let direction = null;
+     
+     
+     
+     document.addEventListener('keydown', function(e){
+            if(e.repeat) return;
+        
+            if(e.key === 'ArrowLeft'){
+                direction = 'left';
+                console.log(element)
+            move (element, x, direction);
+            }
+            
+            if(e.key === 'ArrowRight'){
+                direction = 'right';
+                console.log(element)
+            move (element, x, direction);
+               
+            }
+           
+            
+        });  
+        
+        document.addEventListener('keyup', function(e){
+            direction = null;
+         
+            
+        });
+        
+   </script>
 </body>
 </html>
 
+<!--define direction(line 45) 
+  rename to spaceship-->
