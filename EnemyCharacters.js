@@ -105,13 +105,12 @@ function robot(x, y) {
     }
   }
   
-  function moveAllRobotsSouth(distance) {
-    for (let i = 0; i < robots.length; i++) {
-      if (robots[i].element.style.top !== "700px") {
-        robots[i].moveSouth(distance);
+  function moveAllRobotsSouth() {
+    for (let i = 0; i < robots.length; i++) {    
+        robots[i].moveSouth();
       }
     }
-  }
+  
   
   function stopAllRobots() {
     for (let i = 0; i < robots.length; i++) {
@@ -121,21 +120,21 @@ function robot(x, y) {
   // This async function is making the robots move side to side and south
   async function moveRobots() {
     while (true) {
-      moveAllRobotsEast(window.innerWidth);
-      await sleep(1800);
-      moveAllRobotsSouth(window.innerHeight);
-      await sleep();
-      moveAllRobotsWest(window.innerWidth);
-      await sleep(2000);
-      moveAllRobotsSouth(window.innerHeight);
-      await sleep();
-      moveAllRobotsEast(window.innerWidth);
+      moveAllRobotsEast();
       await sleep(1900);
-      moveAllRobotsSouth(window.innerHeight);
-      await sleep();
-      moveAllRobotsWest(window.innerWidth);
-      await sleep(1600);
-      moveAllRobotsSouth(window.innerHeight);
+      moveAllRobotsSouth();
+      await sleep(350,550);
+      moveAllRobotsWest();
+      await sleep(1000);
+      moveAllRobotsSouth();
+      await sleep(750,600);
+      moveAllRobotsEast();
+      await sleep(900);
+      moveAllRobotsSouth();
+      await sleep(100,700);
+      moveAllRobotsWest();
+      await sleep(200);
+      moveAllRobotsSouth();
       await sleep();
     }
   }
