@@ -5,7 +5,7 @@ function robot(x, y) {
     element.style.position = "absolute";
     element.style.top = y + "px";
     element.style.left = x + "px";
-   // element.style.transform = "translate(-50%, -50%)";
+    //element.style.transform = "translate(-50%, -50%)";
     element.style.width = "40px";
   
     let direction = null;
@@ -122,13 +122,21 @@ function robot(x, y) {
   async function moveRobots() {
     while (true) {
       moveAllRobotsEast(window.innerWidth);
-      await sleep(2000);
+      await sleep(1800);
       moveAllRobotsSouth(window.innerHeight);
-      await sleep(500);
+      await sleep();
       moveAllRobotsWest(window.innerWidth);
       await sleep(2000);
       moveAllRobotsSouth(window.innerHeight);
-      await sleep(500);
+      await sleep();
+      moveAllRobotsEast(window.innerWidth);
+      await sleep(1900);
+      moveAllRobotsSouth(window.innerHeight);
+      await sleep();
+      moveAllRobotsWest(window.innerWidth);
+      await sleep(1600);
+      moveAllRobotsSouth(window.innerHeight);
+      await sleep();
     }
   }
   
