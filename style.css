@@ -5,6 +5,8 @@ body {
     justify-content: center;
     background-color: black;
     font-family: 'Press Start 2P', cursive;
+    width: 1040px;
+    align-items: center;
     
    
     
@@ -134,12 +136,22 @@ a {
   /* this is the css for game-page */
 
   .title-of-game{
-    color: aliceblue;
+    color: rgb(211, 244, 201);
+    text-shadow: 3px 2px 10px;
     text-align: center;
     padding: 25PX;
+    justify-content: center;
+    border: 2px solid #ff00b7;
+    box-shadow: 3px 5px 20px #ff00b7;
   }
 
-  
+  #game-body {
+    background-image: url(content/back-ground.png);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   /*.game-container {
     display: block; 

@@ -1,16 +1,24 @@
-function shootLaser(x, y) {
+function shootLaser(element) {
     let laser = new Image();
     laser.src = new URL("content/laser.png", window.location.href);
     
     // Calculate initial position relative to the element
+
+    laser.style.position = 'absolute';
+    laser.style.top = '1000px';
+
     let elementRect = element.getBoundingClientRect();
+    console.log (elementRect.left);
     let laserLeft = elementRect.left + element.offsetWidth / 2;
-    let laserTop = elementRect.top - 20;
-    
+    console.log(laserLeft);
+    let laserTop = elementRect.top + 20;
+    console.log(laserTop);
+    document.body.appendChild(laser);
     laser.style.left = `${laserLeft}px`;
+    console.log (laser.style.left);
     laser.style.top = `${laserTop}px`;
     laser.style.width = '10px';
-    document.body.appendChild(laser);
+    //document.body.appendChild(laser);
     
     console.log(laser);
     
@@ -28,11 +36,7 @@ function shootLaser(x, y) {
     }, 10);
   }
   
-  document.addEventListener('keydown', function (event) {
-    if (event.key === ' ') {
-      shootLaser(element);
-    }
-  });
+
   
 
   function moveLaser() {

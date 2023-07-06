@@ -1,13 +1,13 @@
    
-    let element = new Image();
+    var element = new Image();
     element.src = new URL("content/space-craft.png", window.location.href);
     var x = 500; 
     element.style.zIndex = 1;
     element.style.position = 'absolute';
-    element.style.top = '700px';
-    element.style.left = x + 'px';
-    //element.style.transform = 'translate(-50%, -50%)';
-    element.style.width = '100px';
+    element.style.top = '1000px';
+    element.style.left = 500 + 'px';
+    element.style.transform = 'translate(-50%, -50%)';
+    element.style.width = '150px';
 
 //console.log (element)
 

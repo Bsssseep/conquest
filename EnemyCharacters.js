@@ -1,54 +1,63 @@
 function robot(x, y) {
-    let element = new Image();
-    element.src = new URL("content/robot-1.png", window.location.href);
-    element.style.zIndex = 1;
-    element.style.position = "absolute";
-    element.style.top = y + "px";
-    element.style.left = x + "px";
-    //element.style.transform = "translate(-50%, -50%)";
-    element.style.width = "40px";
+     //var x = 0;
+    let invader = new Image();
+    invader.src = new URL("content/robot-1.png", window.location.href);
+    invader.style.zIndex = 1;
+    invader.style.position = "absolute";
+    invader.style.top = y + "px";
+    invader.style.left = "2000px" + "px";
+    invader.style.transform = "translate(-50%, -50%)";
+    invader.style.width = "30px";
   
     let direction = null;
-  
+   //movement functions//invader
     function moveRobot() {
       if (direction === "west") {
+        //if(x > -200 && x < 1200){
+        //  console.log (x);
         x -= 1;
       }
+    //}
       if (direction === "north") {
         y += 1;
       }
       if (direction === "east") {
+      
         x += 1;
-      }
+      
+    }
       if (direction === "south") {
         y -= 1;
       }
-      element.style.left = x + "px";
-      element.style.bottom = y + "px";
+      invader.style.left = x + "px";
+      invader.style.bottom = y + "px";
     }
   
     setInterval(moveRobot, 1);
   
     function moveEast() {
+
       direction = "east";
     }
   
     function moveWest() {
+      //if(x < 1000 ){
       direction = "west";
-    }
+      }
+    
   
-    function moveSouth(distance) {
-      y -= distance;
+    function moveSouth() {
+      direction = "south"
     }
   
     function stop() {
       direction = null;
     }
   
-    document.body.appendChild(element);
+    document.body.appendChild(invader);
   
     return {
-      element: element,
+      invader: invader,
       moveWest: moveWest,
       moveEast: moveEast,
       moveSouth: moveSouth,
@@ -87,7 +96,7 @@ function robot(x, y) {
   robots.push(robot(500, 400));
   robots.push(robot(550, 300));
   robots.push(robot(550, 350));
-  robots.push(robot(550, 400))
+  robots.push(robot(550, 400));     
   
   // Setting parameters of inner window for robots
   const screenWidth = window.innerWidth;
@@ -96,24 +105,30 @@ function robot(x, y) {
   function moveAllRobotsEast() {
     for (let i = 0; i < robots.length; i++) {
       robots[i].moveEast();
+      //robots[1].moveEast();
+      //robots[2].moveEast();
     }
   }
   
   function moveAllRobotsWest() {
     for (let i = 0; i < robots.length; i++) {
       robots[i].moveWest();
+      //robots[1].moveWest(x);
+      //robots[2].moveWest(x);
     }
   }
   
   function moveAllRobotsSouth() {
     for (let i = 0; i < robots.length; i++) {    
         robots[i].moveSouth();
+        console.log (moveAllRobotsSouth);
       }
     }
   
   
   function stopAllRobots() {
     for (let i = 0; i < robots.length; i++) {
+      console.
       robots[i].stop();
     }
   }
@@ -121,21 +136,20 @@ function robot(x, y) {
   async function moveRobots() {
     while (true) {
       moveAllRobotsEast();
-      await sleep(1900);
-      moveAllRobotsSouth();
-      await sleep(350,550);
+      await sleep(2000);
+      //moveAllRobotsSouth();
+      //await sleep(750);
+      moveAllRobotsWest();
+      await sleep(2200);
+      //moveAllRobotsSouth();
+      //await sleep(750,600);
+      moveAllRobotsEast();
+      await sleep(1000);
+      //moveAllRobotsSouth();
+      //await sleep(100,700);
       moveAllRobotsWest();
       await sleep(1000);
-      moveAllRobotsSouth();
-      await sleep(750,600);
-      moveAllRobotsEast();
-      await sleep(900);
-      moveAllRobotsSouth();
-      await sleep(100,700);
-      moveAllRobotsWest();
-      await sleep(200);
-      moveAllRobotsSouth();
-      await sleep();
+
     }
   }
   

@@ -9,19 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Cosmic Conquest</title>
 </head>
-<body >
+<body id="game-body">
     <div class="title-of-game">
         <h1>COSMIC CONQUEST</h1>
     </div>
     <div id="game-container" class="game-container">
         
-    </div>
+   
    
     
-    <script src="laser.js"></script>  
+    
     <script src="playermoves.js"></script>    
     <script src="EnemyCharacters.js"></script>
     <script src="newPlayableCharacter.js"></script>
+    <script src="laser.js"></script>  
     <script src="index.js"></script>
 
 
@@ -55,7 +56,11 @@
         
        //laser//
         
-      
+       document.addEventListener('keydown', function (event) {
+    if (event.key === ' ') {
+      shootLaser(element);
+    }   
+});
 
             
        
@@ -65,6 +70,7 @@
      
 
    </script>
+    </div>
 </body>
 </html>
 
