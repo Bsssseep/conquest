@@ -5,8 +5,8 @@ function robot(x, y) {
     element.style.position = "absolute";
     element.style.top = y + "px";
     element.style.left = x + "px";
-    element.style.transform = "translate(-50%, -50%)";
-    element.style.width = "44px";
+   // element.style.transform = "translate(-50%, -50%)";
+    element.style.width = "40px";
   
     let direction = null;
   
@@ -58,23 +58,41 @@ function robot(x, y) {
   
   const robots = [];
   
-  robots.push(robot(100, 200));
-  robots.push(robot(100, 250));
   robots.push(robot(100, 300));
-  robots.push(robot(150, 200));
-  robots.push(robot(150, 250));
+  robots.push(robot(100, 350));
+  robots.push(robot(100, 400));
   robots.push(robot(150, 300));
+  robots.push(robot(150, 350));
+  robots.push(robot(150, 400));
   robots.push(robot(200, 200));
   robots.push(robot(200, 250));
   robots.push(robot(200, 300));
   robots.push(robot(250, 200));
   robots.push(robot(250, 250));
   robots.push(robot(250, 300));
+  robots.push(robot(300, 200));
+  robots.push(robot(300, 250));
+  robots.push(robot(300, 300));
+  robots.push(robot(350, 200));
+  robots.push(robot(350, 250));
+  robots.push(robot(350, 300));
+  robots.push(robot(400, 200));
+  robots.push(robot(400, 250));
+  robots.push(robot(400, 300));
+  robots.push(robot(450, 200));
+  robots.push(robot(450, 250));
+  robots.push(robot(450, 300));
+  robots.push(robot(500, 300));
+  robots.push(robot(500, 350));
+  robots.push(robot(500, 400));
+  robots.push(robot(550, 300));
+  robots.push(robot(550, 350));
+  robots.push(robot(550, 400))
   
   // Setting parameters of inner window for robots
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
-  
+  //the functions below help the robots move side by side//
   function moveAllRobotsEast() {
     for (let i = 0; i < robots.length; i++) {
       robots[i].moveEast();
@@ -89,7 +107,9 @@ function robot(x, y) {
   
   function moveAllRobotsSouth(distance) {
     for (let i = 0; i < robots.length; i++) {
-      robots[i].moveSouth(distance);
+      if (robots[i].element.style.top !== "700px") {
+        robots[i].moveSouth(distance);
+      }
     }
   }
   
@@ -98,16 +118,17 @@ function robot(x, y) {
       robots[i].stop();
     }
   }
-  
-  // This async function helps the robots move side to side and south
+  // This async function is making the robots move side to side and south
   async function moveRobots() {
     while (true) {
-      moveAllRobotsEast();
+      moveAllRobotsEast(window.innerWidth);
       await sleep(2000);
-      moveAllRobotsSouth(50);
-      moveAllRobotsWest();
+      moveAllRobotsSouth(window.innerHeight);
+      await sleep(500);
+      moveAllRobotsWest(window.innerWidth);
       await sleep(2000);
-      moveAllRobotsSouth(550);
+      moveAllRobotsSouth(window.innerHeight);
+      await sleep(500);
     }
   }
   

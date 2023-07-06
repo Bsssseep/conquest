@@ -6,7 +6,7 @@
     element.style.position = 'absolute';
     element.style.top = '700px';
     element.style.left = x + 'px';
-    element.style.transform = 'translate(-50%, -50%)';
+    //element.style.transform = 'translate(-50%, -50%)';
     element.style.width = '100px';
 
 //console.log (element)
