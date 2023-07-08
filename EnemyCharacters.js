@@ -136,19 +136,19 @@ function robot(x, y) {
   async function moveRobots() {
     while (true) {
       moveAllRobotsEast();
-      await sleep(2000);
-      //moveAllRobotsSouth();
-      //await sleep(750);
+      await sleep(500);
+      moveAllRobotsSouth();
+      await sleep(750);
       moveAllRobotsWest();
-      await sleep(2200);
+      await sleep(500);
       //moveAllRobotsSouth();
       //await sleep(750,600);
       moveAllRobotsEast();
-      await sleep(1000);
+      await sleep(900);
       //moveAllRobotsSouth();
       //await sleep(100,700);
       moveAllRobotsWest();
-      await sleep(1000);
+      await sleep(700);
 
     }
   }
@@ -158,3 +158,10 @@ function robot(x, y) {
   function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
   }
+
+
+
+
+  //collision scope of laser and robot//
+
+
