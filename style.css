@@ -139,10 +139,14 @@ a {
     color: rgb(211, 244, 201);
     text-shadow: 3px 2px 10px;
     text-align: center;
-    padding: 25PX;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
     justify-content: center;
     border: 2px solid #ff00b7;
     box-shadow: 3px 5px 20px #ff00b7;
+    background-color: black;
+    margin: 25px;
   }
 
   #game-body {
